@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Link to the external stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particles.js container.  This fixed element will hold the particles
+         animation behind the rest of the page content. -->
+    <div id="particles-js"></div>
+    <!-- Fixed gear container on the left edge. Only half of the SVG gear will be visible
+         inside the viewport because the container is positioned such that half of it
+         overflows to the left. The gear itself is drawn with SVG so there is no
+         background box and it scales crisply at any size. -->
+    <div class="gear-container">
+        <!-- Use the realistic gear image with a transparent background -->
+        <img id="gear" src="images/gear_transparent.png" alt="Rotating gear image">
+    </div>
+
+    <!-- Simple navigation menu pinned to the top right -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main container for full‑screen sections -->
+    <main id="fullpage">
+        <!-- Home section -->
+        <section id="home" class="section home-section">
+            <div class="content-wrapper">
+                <h1>Welcome</h1>
+                <p>
+                    My name is Stefan Popovski. <br>
+                    Thank you for visiting my website.<br>
+                    Scroll down to learn more about me, my experiences and pursuits.
+                </p>
+            </div>
+        </section>
+
+        <!-- About section -->
+        <section id="about" class="section about-section">
+            <div class="content-wrapper">
+                <h2>About Me</h2>
+                <p>
+                    With origins from Skopje, Macedonia, I am an inspiring mechanical engineering undergraduate at the
+                    University of Maryland - College Park. Solving and finding optimal and efficient solutions to
+                    critical and challenging problems, have always been a crucial part of me and my journey of becoming
+                    a successful engineer.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects section -->
+        <section id="projects" class="section projects-section">
+            <div class="content-wrapper">
+                <h2>Projects</h2>
+                <p>
+                    Here you can highlight your favourite projects. Each project
+                    could include a short description, technologies used and a
+                    link to view it live or on GitHub. Feel free to add images
+                    or screenshots to better illustrate your work.
+                </p>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <h3>Macedonia - Greece Interconnector Intern</h3>
+                        <p>As an intern at TSG Industry Service, Macedonia, I was given the responsibility for calculating and minimizing
+                         the waste pipe drop-off as a result of welded joints between different sections of the pipeline structure. Using linear algebra, I was able to
+                         develop a brute-force algorithm in Python, creating optimal combinations of the provided 12, 14 and 18-meter pipe sections. </p>
+                        <div class="details">
+                            <p>This is where you can add a longer explanation, bullet points, screenshots, or any other content you want to show when expanded. You can also include links or code snippets here.</p>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <h3>Trident Energy FPSO Intern</h3>
+                        <p>A brief description of your second project.</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>High Temperature Heat Flux Sensor - Undergraduate Research Assistant</h3>
+                        <p>A brief description of your third project.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact" class="section contact-section">
+            <div class="content-wrapper">
+                <h2>Contact</h2>
+                <p>
+                    Interested in working together or have a question?
+                    Reach out via email or connect with me on social media.
+                </p>
+                <ul class="contact-list">
+                    <li>Email: <a href="mailto:stefan.popovski555@gmail.com">stefan.popovski555@gmail.com</a></li>
+                    <li>LinkedIn: <a href="linkedin.com/in/popovskis" target="_blank" rel="noopener">linkedin.com/in/popovskis</a></li>
+                    <li>GitHub: <a href="github.com/stef-ann" target="_blank" rel="noopener">github.com/stef-ann</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript file to handle scrolling and gear rotation -->
+    <script src="script.js"></script>
+
+    <!-- Include the particles.js library from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <!-- Initialize particles.js with our custom configuration.  We embed the
+         configuration directly to avoid issues loading local JSON via file://. -->
+    <script>
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 50,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#b41212'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#b41212',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
